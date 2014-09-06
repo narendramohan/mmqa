@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Login to MMQA</TITLE>
+<script type="text/javascript">
+	function checkform() {
+		if (document.login.userName.value == '') {
+			// something is wrong
+			alert('Please Enter Your Name');
+			document.login.userName.focus();
+			return false;
+		} else if (document.login.userPassWord.value == '') {
+			// something else is wrong
+			alert('Please Enter Pasword');
+			document.login.userPassWord.focus();
+			return false;
+		} else if (document.login.userRePassWord.value == ' '
+				|| document.login.userRePassWord.value != document.login.userPassWord.value) {
+			// something else is wrong
+			alert('Your Password Matching not found');
+			document.login.userRePassWord.focus();
+			return false;
+		}
+
+		return true;
+	}
+</script>
+
+</HEAD>
+<BODY bgcolor=lightblue>
+<h2>MMQA User registration page</h2>
+	<form name=login method="post" action="RegistrationServlet"
+		onSubmit="return checkform(this)">
+		<h1></h1>
+		<br>
+		<table align="center" border=1 style="border-color: teal; border-width: 1pt;border-spacing: 0pt">
+			<tr style="background:teal;">
+				<th colspan="2">Enter your Name and Pasword</th>
+			</tr>
+			<tr>
+				<td>Enter Your Name :</td>
+				<td><input type="text" name="userName" value=""></td>
+			</tr>
+			<tr>
+				<td>Enter Your PassWord :</td>
+				<td><input type="password" name="userPassWord" value=""></td>
+			</tr>
+			<tr>
+				<td>Confirm Your PassWord :</td>
+				<td><input type="password" name="userRePassWord" value=""></td>
+			</tr>
+			<tr>
+				<td align=right colspan="2"><input type="submit" name="Submit"
+					value="Submit">&nbsp;<input type="reset" name="reset"
+					value="Refresh"></td>
+			</tr>
+		</table>
+	</form>
+</BODY>
+</HTML>
+
+<!-- <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Multi Media Question Answers</title>
+</head>
+<body>
+<form name="searchForm" action="doSearch" method="post">
+	<table>
+	<tr><td>
+	<input type="text" name="searchText" width="400px"/></td><td>&nbsp;<input type="submit" name="search" value="Search"></td></tr>
+	<tr><td colspan="2">
+		<input type="radio" value="all" name="type"> All
+		<input type="radio" value="text" name="type"> Text
+		<input type="radio" value="image" name="type"> Image
+		<input type="radio" value="video" name="type"> Video
+	</td></tr>
+	</table>
+</form>
+</body>
+</html> -->
